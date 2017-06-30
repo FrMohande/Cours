@@ -1,0 +1,411 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>card1 &mdash; Card 0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Card 0 documentation" href="../index.html" />
+    <link rel="up" title="Module code" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="../index.html">Card 0 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for card1</h1><div class="highlight"><pre>
+<span class="c">#!/usr/bin/python3</span>
+<span class="c"># -*- coding: utf-8 -*-</span>
+<span class="c">#Outioua Mohand -- Jonathan Soleillet</span>
+
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">:mod:`card1` module : version 1 of a (simple) module for card </span>
+
+<span class="sd">:author: `Outioua Mohand et Jonathan Soleillet`</span>
+
+<span class="sd">:date: 2015, september</span>
+
+<span class="sd">Cards are defined by a value and a color. Possible values and colors are listed in card.values and card.colors. </span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">builtins</span>
+
+
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;heart&#39;</span><span class="p">,</span><span class="s">&#39;clover&#39;</span><span class="p">,</span><span class="s">&#39;pike&#39;</span><span class="p">,</span><span class="s">&#39;tile&#39;</span><span class="p">]</span>
+<span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;7&#39;</span><span class="p">,</span><span class="s">&#39;8&#39;</span><span class="p">,</span><span class="s">&#39;9&#39;</span><span class="p">,</span><span class="s">&#39;10&#39;</span><span class="p">,</span><span class="s">&#39;V&#39;</span><span class="p">,</span><span class="s">&#39;Q&#39;</span><span class="p">,</span><span class="s">&#39;K&#39;</span><span class="p">,</span><span class="s">&#39;A&#39;</span><span class="p">]</span>
+
+<div class="viewcode-block" id="create"><a class="viewcode-back" href="../card1.html#card1.create">[docs]</a><span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="n">value</span><span class="p">,</span><span class="n">color</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    creates a card with value and color</span>
+<span class="sd">    </span>
+<span class="sd">    :param value: value of the card</span>
+<span class="sd">    :type value: element of card.value</span>
+<span class="sd">    :param color: color of the card</span>
+<span class="sd">    :type color: element of card.color</span>
+<span class="sd">    :return: a new card with value and color</span>
+<span class="sd">    :rtype: card</span>
+<span class="sd">    :UC: None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">assert</span><span class="p">(</span><span class="n">color</span> <span class="ow">in</span> <span class="n">colors</span><span class="p">),</span><span class="s">&quot;the color have to be heart,clover,pike or tile&quot;</span>
+    <span class="k">assert</span><span class="p">(</span><span class="n">value</span> <span class="ow">in</span> <span class="n">values</span><span class="p">),</span><span class="s">&quot;the value have to be 7,8,9,10,V,Q,K or A&quot;</span>
+    <span class="n">card</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;color&#39;</span><span class="p">:</span><span class="n">color</span><span class="p">,</span><span class="s">&#39;value&#39;</span><span class="p">:</span><span class="n">value</span><span class="p">}</span>
+    <span class="k">return</span> <span class="n">card</span>
+</div>
+<div class="viewcode-block" id="randomcard"><a class="viewcode-back" href="../card1.html#card1.randomcard">[docs]</a><span class="k">def</span> <span class="nf">randomcard</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    create a cards whose value and color are randomly chosen</span>
+<span class="sd">    </span>
+<span class="sd">    :return: a randomly chosen card</span>
+<span class="sd">    :rtype: card</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">card</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;color&#39;</span><span class="p">:</span><span class="n">choice</span><span class="p">(</span><span class="n">colors</span><span class="p">),</span><span class="s">&#39;value&#39;</span><span class="p">:</span><span class="n">choice</span><span class="p">(</span><span class="n">values</span><span class="p">)}</span>
+    <span class="k">return</span> <span class="n">card</span>
+
+</div>
+<div class="viewcode-block" id="color"><a class="viewcode-back" href="../card1.html#card1.color">[docs]</a><span class="k">def</span> <span class="nf">color</span><span class="p">(</span><span class="n">card</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    returns the color of the card</span>
+
+<span class="sd">    :param card: the card</span>
+<span class="sd">    :type card:</span>
+<span class="sd">    :param type: card</span>
+<span class="sd">    :type type:</span>
+<span class="sd">    :return: the color of the card</span>
+<span class="sd">    :UC: None</span>
+<span class="sd">    :Example:</span>
+
+<span class="sd">    &gt;&gt;&gt; c = create(&#39;A&#39;,&#39;heart&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; color(c)</span>
+<span class="sd">    &#39;heart&#39;</span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">card</span><span class="p">[</span><span class="s">&#39;color&#39;</span><span class="p">]</span></div>
+<div class="viewcode-block" id="value"><a class="viewcode-back" href="../card1.html#card1.value">[docs]</a><span class="k">def</span> <span class="nf">value</span><span class="p">(</span><span class="n">card</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    returns of the value of the card</span>
+
+<span class="sd">    :param card: the card</span>
+<span class="sd">    :type card: card</span>
+<span class="sd">    :return: the value of the card</span>
+<span class="sd">    :UC: None</span>
+<span class="sd">    :Example:</span>
+
+<span class="sd">    &gt;&gt;&gt; c = create(&#39;A&#39;,heart&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; value(c)</span>
+<span class="sd">    &#39;A&#39;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">card</span><span class="p">[</span><span class="s">&#39;value&#39;</span><span class="p">]</span>
+</div>
+<div class="viewcode-block" id="compare_value"><a class="viewcode-back" href="../card1.html#card1.compare_value">[docs]</a><span class="k">def</span> <span class="nf">compare_value</span><span class="p">(</span><span class="n">card1</span><span class="p">,</span><span class="n">card2</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    compares cards values, returns :</span>
+<span class="sd">      * a positive number if card1’s value is greater than card2’s</span>
+<span class="sd">      * a negative number if card1’s value is lower than card2’s</span>
+<span class="sd">      * 0 if card1’s value is the same greater than card2’s</span>
+<span class="sd">    :param card1: the first card</span>
+<span class="sd">    :type card1: card</span>
+<span class="sd">    :param card2: the second card</span>
+<span class="sd">    :type card2: card</span>
+<span class="sd">    :return:</span>
+<span class="sd">      * a positive number if card1’s value is greater than card2’s</span>
+<span class="sd">      * a negative number if card1’s value is lower than card2’s</span>
+<span class="sd">      * 0 if card1’s value is the same greater than card2’s</span>
+<span class="sd">    :rtype: int</span>
+<span class="sd">    :UC: None</span>
+<span class="sd">    :Example:</span>
+
+<span class="sd">    &gt;&gt;&gt; c1 = create(&#39;Ace&#39;,&#39;heart&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; c2 = create(&#39;King&#39;,&#39;heart&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; c3 = create(&#39;Ace&#39;,&#39;spade&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; compare_value(c1,c2) &gt; 0</span>
+<span class="sd">    True</span>
+<span class="sd">    &gt;&gt;&gt; compare_value(c2,c1) &lt; 0</span>
+<span class="sd">    True</span>
+<span class="sd">    &gt;&gt;&gt; compare_value(c1,c3) == 0</span>
+<span class="sd">    True</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">index1</span> <span class="o">=</span> <span class="n">values</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">card1</span><span class="p">[</span><span class="s">&#39;value&#39;</span><span class="p">])</span>
+    <span class="n">index2</span> <span class="o">=</span> <span class="n">values</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">card2</span><span class="p">[</span><span class="s">&#39;value&#39;</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">index1</span><span class="o">-</span><span class="n">index2</span>
+</div>
+<div class="viewcode-block" id="compare_color"><a class="viewcode-back" href="../card1.html#card1.compare_color">[docs]</a><span class="k">def</span> <span class="nf">compare_color</span><span class="p">(</span><span class="n">card1</span><span class="p">,</span><span class="n">card2</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    compares cars colors,return :</span>
+<span class="sd">        * a positive number if card1’s color is greater than card2’s</span>
+<span class="sd">        * a negative number if card1’s color is lower than card2’s</span>
+<span class="sd">        * 0 if card1’s color is the same greater than card2’s</span>
+<span class="sd">      </span>
+<span class="sd">    :param card1: the first card</span>
+<span class="sd">    :type card1: card</span>
+<span class="sd">    :param card2: the second card</span>
+<span class="sd">    :type card2: card</span>
+<span class="sd">    :return:</span>
+<span class="sd">      * a positive number if card1&#39;s color is greather than card2&#39;s</span>
+<span class="sd">      * a negative number if card1&#39;s color is lower than card2&#39;s</span>
+<span class="sd">      * 0 if card1&#39;s color is the same greather than card2&#39;s</span>
+<span class="sd">    :rtype: int</span>
+<span class="sd">    :UC: None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">index1</span> <span class="o">=</span> <span class="n">colors</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">card1</span><span class="p">[</span><span class="s">&#39;color&#39;</span><span class="p">])</span>
+    <span class="n">index2</span> <span class="o">=</span> <span class="n">colors</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">card2</span><span class="p">[</span><span class="s">&#39;color&#39;</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">index1</span><span class="o">-</span><span class="n">index2</span>
+</div>
+<div class="viewcode-block" id="compare"><a class="viewcode-back" href="../card1.html#card1.compare">[docs]</a><span class="k">def</span> <span class="nf">compare</span><span class="p">(</span><span class="n">card1</span><span class="p">,</span><span class="n">card2</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    compares cards, first it compares cards values and if equal cards colors returns :</span>
+<span class="sd">      * a positive number if card1 is greater than card2</span>
+<span class="sd">      * a negative number if card1 is lower than card2</span>
+<span class="sd">      * 0 if card1 is the same greater than card2</span>
+<span class="sd">    :param card1: the first card</span>
+<span class="sd">    :type card1: card</span>
+<span class="sd">    :param card2: the second card</span>
+<span class="sd">    :type card2: card</span>
+<span class="sd">    :return:</span>
+<span class="sd">      * a positive number if card1 is greater than card2</span>
+<span class="sd">      * a negative number if card1 is lower than card2</span>
+<span class="sd">      * 0 if card1 is the same greater than card2</span>
+<span class="sd">    :rtype: int</span>
+<span class="sd">    :UC: None</span>
+<span class="sd">    :Example:</span>
+
+<span class="sd">    &gt;&gt;&gt; c1 = create(&#39;Ace&#39;,&#39;heart&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; c2 = create(&#39;King&#39;,&#39;heart&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; c3 = create(&#39;Ace&#39;,&#39;spade&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; c1bis = create(&#39;Ace&#39;,&#39;heart&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; compare(c1,c2) &gt; 0</span>
+<span class="sd">    True</span>
+<span class="sd">    &gt;&gt;&gt; compare(c2,c1) &lt; 0</span>
+<span class="sd">    True</span>
+<span class="sd">    &gt;&gt;&gt; compare(c1,c3) &lt; 0</span>
+<span class="sd">    True</span>
+<span class="sd">    &gt;&gt;&gt; compare(c1,c1bis) == 0</span>
+<span class="sd">    True</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">compare_value</span><span class="p">(</span><span class="n">card1</span><span class="p">,</span><span class="n">card2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">:</span>
+        <span class="k">return</span> <span class="n">compare_color</span><span class="p">(</span><span class="n">card1</span><span class="p">,</span><span class="n">card2</span><span class="p">)</span>
+    <span class="k">else</span> <span class="p">:</span>
+        <span class="k">return</span> <span class="n">compare_value</span><span class="p">(</span><span class="n">card1</span><span class="p">,</span><span class="n">card2</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="__to_string"><a class="viewcode-back" href="../card1.html#card1.__to_string">[docs]</a><span class="k">def</span> <span class="nf">__to_string</span><span class="p">(</span><span class="n">card</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    returns a string representation of the card</span>
+
+<span class="sd">    :param card: the card</span>
+<span class="sd">    :type card: card</span>
+<span class="sd">    :return:  a string representation of the card</span>
+<span class="sd">    :rtype: string</span>
+<span class="sd">    :UC: None</span>
+<span class="sd">    :Example:</span>
+
+<span class="sd">    &gt;&gt;&gt; c = create(&#39;Ace&#39;,&#39;heart&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; to_string(c)</span>
+<span class="sd">    &#39;Ace of heart&#39;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">value</span><span class="p">(</span><span class="n">card</span><span class="p">)</span> <span class="o">+</span> <span class="s">&#39; of &#39;</span> <span class="o">+</span> <span class="n">color</span><span class="p">(</span><span class="n">card</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="print"><a class="viewcode-back" href="../card1.html#card1.print">[docs]</a><span class="k">def</span> <span class="nf">print</span><span class="p">(</span><span class="n">card</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    print the card</span>
+
+<span class="sd">    :param card: the card</span>
+<span class="sd">    :type card: card</span>
+<span class="sd">    :param end: [optional] separator (default is \\\n)</span>
+<span class="sd">    :type end: string</span>
+<span class="sd">    :UC: None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">builtins</span><span class="o">.</span><span class="k">print</span> <span class="p">(</span><span class="n">__to_string</span><span class="p">(</span><span class="n">card</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="n">end</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="create_card_game"><a class="viewcode-back" href="../card1.html#card1.create_card_game">[docs]</a><span class="k">def</span> <span class="nf">create_card_game</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    create the game card</span>
+
+<span class="sd">    :return: a list who contains the cards</span>
+<span class="sd">    :rtype: list</span>
+<span class="sd">    :UC: None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">jeu_carte</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">colors</span><span class="p">)):</span>
+            <span class="n">jeu_carte</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">create</span><span class="p">(</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">colors</span><span class="p">[</span><span class="n">j</span><span class="p">]))</span>
+    <span class="k">return</span> <span class="n">jeu_carte</span></div>
+<div class="viewcode-block" id="distribution"><a class="viewcode-back" href="../card1.html#card1.distribution">[docs]</a><span class="k">def</span> <span class="nf">distribution</span><span class="p">(</span><span class="n">nombre_carte</span><span class="p">,</span><span class="n">jeu_carte</span><span class="p">,</span><span class="n">joueurs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    distribute the card for each player</span>
+
+<span class="sd">    :param jeu_carte: list who contains the cards</span>
+<span class="sd">    :type jeu_carte: list</span>
+<span class="sd">    :param joueurs: the players</span>
+<span class="sd">    :type joueurs: dictionary</span>
+<span class="sd">    :UC: None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">cpt</span> <span class="o">=</span> <span class="mi">0</span> 
+    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">jeu_carte</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">cpt</span> <span class="o">&lt;</span> <span class="n">nombre_carte</span><span class="p">:</span> 
+        <span class="n">joueurs</span><span class="p">[</span><span class="s">&#39;j1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">jeu_carte</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">jeu_carte</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">jeu_carte</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">cpt</span> <span class="o">=</span> <span class="n">cpt</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">cpt</span> <span class="o">&lt;</span> <span class="n">nombre_carte</span> <span class="p">:</span> 
+            <span class="n">joueurs</span><span class="p">[</span><span class="s">&#39;j2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">jeu_carte</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">jeu_carte</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">jeu_carte</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">cpt</span> <span class="o">=</span> <span class="n">cpt</span> <span class="o">+</span> <span class="mi">1</span></div>
+<div class="viewcode-block" id="my_reverse"><a class="viewcode-back" href="../card1.html#card1.my_reverse">[docs]</a><span class="k">def</span> <span class="nf">my_reverse</span><span class="p">(</span><span class="n">l</span><span class="p">,</span><span class="n">l2</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    renverse the list</span>
+
+<span class="sd">    :param l1: list</span>
+<span class="sd">    :type l1: list</span>
+<span class="sd">    :param l2: list</span>
+<span class="sd">    :type l2: list</span>
+<span class="sd">    :UC: None</span>
+<span class="sd">    :Example:</span>
+
+<span class="sd">    &gt;&gt;&gt; my_reverse([0,1,2,3],[])</span>
+<span class="sd">    [3,2,1,0]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">l</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">l2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">l</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">l2</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="jeu_bataille"><a class="viewcode-back" href="../card1.html#card1.jeu_bataille">[docs]</a><span class="k">def</span> <span class="nf">jeu_bataille</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    plays to the War (card game)</span>
+
+<span class="sd">    :param n: numbers of cards for each player</span>
+<span class="sd">    :type n: int</span>
+<span class="sd">    :UC: numbers of cards</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">assert</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span><span class="s">&quot;the number has to be less or equal to </span><span class="si">%d</span><span class="s">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">))</span>
+    <span class="n">table</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+    <span class="n">joueurs</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;j1&#39;</span><span class="p">:[],</span><span class="s">&#39;j2&#39;</span><span class="p">:[]}</span>
+    <span class="n">jeu_carte</span> <span class="o">=</span> <span class="n">create_card_game</span><span class="p">()</span>
+    <span class="c">#shuffle permet de mélanger aléatoirement la liste</span>
+    <span class="n">shuffle</span><span class="p">(</span><span class="n">jeu_carte</span><span class="p">)</span>
+    <span class="n">distribution</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">jeu_carte</span><span class="p">,</span><span class="n">joueurs</span><span class="p">)</span>
+    <span class="n">fin</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
+    <span class="n">bataille</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="n">cpt</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">joueurs</span><span class="p">[</span><span class="s">&#39;j1&#39;</span><span class="p">])</span> <span class="o">!=</span><span class="mi">0</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">joueurs</span><span class="p">[</span><span class="s">&#39;j2&#39;</span><span class="p">])</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="c">#mettre &gt; à 0</span>
+        <span class="k">if</span> <span class="n">bataille</span><span class="p">:</span>
+            <span class="n">pref</span> <span class="o">=</span> <span class="s">&#39;</span><span class="se">\t</span><span class="s">&#39;</span>
+        <span class="k">else</span> <span class="p">:</span>
+            <span class="n">pref</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
+        <span class="n">builtins</span><span class="o">.</span><span class="k">print</span><span class="p">(</span><span class="n">pref</span><span class="p">,</span><span class="s">&#39;joueur 1 joue : &#39;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">)</span> 
+        <span class="k">print</span><span class="p">(</span><span class="n">joueurs</span><span class="p">[</span><span class="s">&#39;j1&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">builtins</span><span class="o">.</span><span class="k">print</span><span class="p">(</span><span class="n">pref</span><span class="p">,</span><span class="s">&#39;joueur 2 joue : &#39;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">joueurs</span><span class="p">[</span><span class="s">&#39;j2&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+        
+        <span class="n">table</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">joueurs</span><span class="p">[</span><span class="s">&#39;j1&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">table</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">joueurs</span><span class="p">[</span><span class="s">&#39;j2&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">joueurs</span><span class="p">[</span><span class="s">&#39;j1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">joueurs</span><span class="p">[</span><span class="s">&#39;j1&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">joueurs</span><span class="p">[</span><span class="s">&#39;j2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">joueurs</span><span class="p">[</span><span class="s">&#39;j2&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">builtins</span><span class="o">.</span><span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">joueurs</span><span class="p">[</span><span class="s">&#39;j1&#39;</span><span class="p">]),</span><span class="nb">len</span><span class="p">(</span><span class="n">joueurs</span><span class="p">[</span><span class="s">&#39;j2&#39;</span><span class="p">]))</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">compare_value</span><span class="p">(</span><span class="n">table</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">table</span><span class="p">)</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span><span class="n">table</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">table</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span>
+            <span class="c">#joueur 1 gagne la manche</span>
+            <span class="n">my_reverse</span><span class="p">(</span><span class="n">table</span><span class="p">,</span><span class="n">joueurs</span><span class="p">[</span><span class="s">&#39;j1&#39;</span><span class="p">])</span>
+            <span class="n">table</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+            <span class="n">bataille</span> <span class="o">=</span> <span class="bp">False</span>
+            <span class="n">builtins</span><span class="o">.</span><span class="k">print</span><span class="p">(</span><span class="s">&#39;joueurs 1 gagne la manche&#39;</span><span class="p">)</span>
+        <span class="k">elif</span><span class="p">(</span><span class="n">compare_value</span><span class="p">(</span><span class="n">table</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">table</span><span class="p">)</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span><span class="n">table</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">table</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">):</span>
+            <span class="c">#joueur 2 gagne la manche</span>
+             <span class="n">my_reverse</span><span class="p">(</span><span class="n">table</span><span class="p">,</span><span class="n">joueurs</span><span class="p">[</span><span class="s">&#39;j2&#39;</span><span class="p">])</span>
+             <span class="n">table</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+             <span class="n">bataille</span> <span class="o">=</span> <span class="bp">False</span>
+             <span class="n">builtins</span><span class="o">.</span><span class="k">print</span><span class="p">(</span><span class="s">&#39;joueurs 2 gagne la manche&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c">#bataille</span>
+            <span class="n">builtins</span><span class="o">.</span><span class="k">print</span><span class="p">(</span><span class="s">&quot;bataille&quot;</span><span class="p">)</span>
+            <span class="n">bataille</span> <span class="o">=</span> <span class="bp">True</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">bataille</span> <span class="p">:</span>
+            <span class="n">builtins</span><span class="o">.</span><span class="k">print</span><span class="p">()</span>
+    <span class="k">if</span>  <span class="nb">len</span><span class="p">(</span><span class="n">joueurs</span><span class="p">[</span><span class="s">&#39;j1&#39;</span><span class="p">])</span> <span class="o">!=</span><span class="mi">0</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">joueurs</span><span class="p">[</span><span class="s">&#39;j2&#39;</span><span class="p">])</span> <span class="o">==</span><span class="mi">0</span>  <span class="p">:</span>
+        <span class="n">builtins</span><span class="o">.</span><span class="k">print</span><span class="p">(</span><span class="s">&quot;joueur 1 gagne&quot;</span><span class="p">)</span>
+        <span class="n">builtins</span><span class="o">.</span><span class="k">print</span><span class="p">(</span><span class="s">&quot;joueur 2 perd&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">joueurs</span><span class="p">[</span><span class="s">&#39;j1&#39;</span><span class="p">])</span> <span class="o">==</span><span class="mi">0</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">joueurs</span><span class="p">[</span><span class="s">&#39;j2&#39;</span><span class="p">])</span> <span class="o">!=</span><span class="mi">0</span><span class="p">:</span>
+        <span class="n">builtins</span><span class="o">.</span><span class="k">print</span><span class="p">(</span><span class="s">&quot;joueur 2 gagne le jeu&quot;</span><span class="p">)</span>
+        <span class="n">builtins</span><span class="o">.</span><span class="k">print</span><span class="p">(</span><span class="s">&quot;joueur 1 perd le jeu&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">builtins</span><span class="o">.</span><span class="k">print</span><span class="p">(</span><span class="s">&quot;Il y a une équalité entre les deux joueurs&quot;</span><span class="p">)</span>
+        
+    
+
+        </div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo_FIL.png" alt="Logo"/>
+            </a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="../index.html">Card 0 documentation</a> &raquo;</li>
+          <li><a href="index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015, Outioua Mohand et Jonathan Soleillet, FIL - IEEA - Univ-lille1.
+      Last updated on 17/11/2015.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

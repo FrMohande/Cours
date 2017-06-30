@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>parentheses_checker1 &mdash; Parentheses 0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Parentheses 0 documentation" href="../index.html" />
+    <link rel="up" title="Module code" href="index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Parentheses 0 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for parentheses_checker1</h1><div class="highlight"><pre>
+<span class="c">#!/usr/bin/env python3</span>
+<span class="c"># -*- coding: utf-8 -*-</span>
+<span class="c">#Outioua Mohand -- Jonathan Soleillet</span>
+
+
+<span class="kn">from</span> <span class="nn">stack</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="c">##Autre méthode</span>
+<span class="c">##def well_parentheses(filename):</span>
+<span class="c">##    stream = open(filename,&#39;r&#39;)</span>
+<span class="c">##    ouvrant = create()</span>
+<span class="c">##    fermant = create()</span>
+<span class="c">##    retour = True</span>
+<span class="c">##    list_ouvrant = [&#39;(&#39;,&#39;[&#39;,&#39;{&#39;]</span>
+<span class="c">##    list_fermant = [&#39;)&#39;,&#39;]&#39;,&#39;}&#39;]</span>
+<span class="c">##    c = stream.readlines()</span>
+<span class="c">##    for phrase in c :</span>
+<span class="c">##        for lettre in phrase :</span>
+<span class="c">##            if lettre in list_ouvrant:</span>
+<span class="c">##                push(lettre,ouvrant)</span>
+<span class="c">##                #print(lettre)</span>
+<span class="c">##            elif lettre in list_fermant :</span>
+<span class="c">##                push(lettre,fermant)</span>
+<span class="c">##                #print(lettre)</span>
+<span class="c">##    while not is_empty(ouvrant) and  not is_empty(fermant) :</span>
+<span class="c">##        temp_ouvert = pop(ouvrant)</span>
+<span class="c">##        temp_fermante = pop(fermant)</span>
+<span class="c">##        if list_ouvrant.index(temp_ouvert) != list_fermant.index(temp_fermante):</span>
+<span class="c">##            retour = False</span>
+<span class="c">##    if retour :</span>
+<span class="c">##        print(&#39;Well parenthesed&#39;)</span>
+<span class="c">##    else :</span>
+<span class="c">##        print(&#39;Bad parenthesed&#39;)</span>
+<span class="c">##    stream.close()</span>
+
+
+<div class="viewcode-block" id="well_parentheses"><a class="viewcode-back" href="../parentheses_checker1.html#parentheses_checker1.well_parentheses">[docs]</a><span class="k">def</span> <span class="nf">well_parentheses</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Print if the file is well parenthesed or not</span>
+
+<span class="sd">    :param filename: file</span>
+<span class="sd">    :type filename: file</span>
+<span class="sd">    :UC: None</span>
+<span class="sd">    :Example:</span>
+
+<span class="sd">    &gt;&gt;&gt; well_parentheses(&quot;stack.py&quot;)</span>
+<span class="sd">    &#39;Well parenthesed&#39;</span>
+<span class="sd">    &gt;&gt;&gt; well_parentheses(&quot;bad_stack1.py&quot;)</span>
+<span class="sd">    &#39;Bad parenthesed&#39;</span>
+<span class="sd">    &gt;&gt;&gt; well_parentheses(&quot;bad_stack2.py&quot;)</span>
+<span class="sd">    &#39;Bad parenthesed&#39;</span>
+<span class="sd">    &gt;&gt;&gt; well_parentheses(&quot;bad_stack3.py&quot;)</span>
+<span class="sd">    &#39;Bad parenthesed&#39;</span>
+<span class="sd">    &gt;&gt;&gt; well_parentheses(&quot;bad_stack4.py&quot;)</span>
+<span class="sd">    &#39;Bad parenthesed&#39;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">stream</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="s">&#39;r&#39;</span><span class="p">)</span>
+    <span class="n">ouvrant</span> <span class="o">=</span> <span class="n">create</span><span class="p">()</span>
+    <span class="n">retour</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="n">list_ouvrant</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;(&#39;</span><span class="p">,</span><span class="s">&#39;[&#39;</span><span class="p">,</span><span class="s">&#39;{&#39;</span><span class="p">]</span>
+    <span class="n">list_fermant</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;)&#39;</span><span class="p">,</span><span class="s">&#39;]&#39;</span><span class="p">,</span><span class="s">&#39;}&#39;</span><span class="p">]</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">stream</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">phrase</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="p">:</span>
+        <span class="k">for</span> <span class="n">j</span><span class="p">,</span><span class="n">lettre</span> <span class="ow">in</span>  <span class="nb">enumerate</span><span class="p">(</span><span class="n">phrase</span><span class="p">)</span> <span class="p">:</span>
+            <span class="k">if</span> <span class="n">lettre</span> <span class="ow">in</span> <span class="n">list_ouvrant</span><span class="p">:</span>
+                <span class="n">push</span><span class="p">(</span><span class="n">lettre</span><span class="p">,</span><span class="n">ouvrant</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">lettre</span> <span class="ow">in</span> <span class="n">list_fermant</span> <span class="p">:</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">is_empty</span><span class="p">(</span><span class="n">ouvrant</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="n">list_ouvrant</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">top</span><span class="p">(</span><span class="n">ouvrant</span><span class="p">))</span> <span class="o">==</span> <span class="n">list_fermant</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">lettre</span><span class="p">):</span>
+                        <span class="n">pop</span><span class="p">(</span><span class="n">ouvrant</span><span class="p">)</span>
+                    <span class="k">else</span> <span class="p">:</span>
+                        <span class="n">temp</span> <span class="o">=</span> <span class="n">pop</span><span class="p">(</span><span class="n">ouvrant</span><span class="p">)</span>
+                        <span class="n">retour</span> <span class="o">=</span> <span class="bp">False</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">retour</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">is_empty</span><span class="p">(</span><span class="n">ouvrant</span><span class="p">):</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="n">top</span><span class="p">(</span><span class="n">ouvrant</span><span class="p">)</span>
+        <span class="n">retour</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="k">if</span> <span class="n">retour</span> <span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&#39;Well parenthesed&#39;</span><span class="p">)</span>
+    <span class="k">else</span> <span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&#39;Bad parenthesed&#39;</span><span class="p">)</span>
+    <span class="n">stream</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo_FIL.png" alt="Logo"/>
+            </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Parentheses 0 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Outioua Mohand et Jonathan Soleillet, FIL - IEEA - Univ-lille1.
+      Last updated on 26/11/2015.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

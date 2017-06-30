@@ -1,0 +1,149 @@
+Outioua Mohand
+
+
+
+1. Calcul en binaire, octal et hexadécimal
+1.2 Choix de la base
+Exercice 1 :
+Q1 - 
+
+
+
+
+
+Exercice 2 :
+
+
+
+Q1 + Q2 -
+
+111111
+
+
+
+1.3 Opérations Arithmétiques
+Exercice 3 :
+x
+X2 = 22n+2 + 2n+2 + 1
+X3 = 23n+3 + 22n+3 + 22n+2 + 2n+2 + 2n+1 + 1
+1710 = 100012 (n=3)
+28910
+491310
+510 = 1012 (n=1)
+2510
+12510
+6510 = 10000012 (n=5)
+422510
+27462510
+
+2. Examen de fichier avec un éditeur hexadécimal
+2.1 Trois fichiers contenant un texte
+Exercice 7 :
+Q2 : En ouvrant les trois fichiers avec l'éditeur de texte « gedit », les 2 fichiers .txt sont identiques et celui .odt est illisible car il n'est pas dans le même codage.
+Q3 : En ouvrant ces trois fichiers dans LibreOffice, les 2 fichiers .txt ont des caractères spécifiques qui ne sont pas lisibles (le « é ») tandis que le .odt est tout à fait lisible.
+Q4 : 
+fichiers
+Taille en octets
+cigale1.odt
+16 971
+cigale1.txt
+624
+cigale2.txt
+648
+
+Q5 :
+1. On reconnaît les fichiers grâce au	texte présent sur le côté droit et le nom du fichier qui s'affiche en bas.
+2. Il y a beaucoup moins de points entre chaque vers dans cigale1.txt que cigale2.txt, ce qui explique que le premier soit plus petit en taille que le deuxième.
+Les retours à la ligne sont codés différemment : 
+- 0D 0A 0D 0A pour cigale2.txt
+- 0A 0A pour cigale1.txt
+Cigale1.txt finit sur la ligne 270 contre la ligne 280 pour cigale2.txt.
+2.2 Deux fichiers contenant une image
+Q2 : Il n'y a aucune différence visible entre ces 2 images dans l'afficheur d'image ImageMagic.
+Q3 :
+fichiers
+Taille en octets
+adage.bmp
+82 874
+adage.gif
+5 057
+Le fichier .gif est beaucoup plus économique en taille que le .bmp.
+
+
+Q4 :
+	On constate que dans le fichier adage.bmp, il y a énormément de ligne rempli de '.' sur la droite et de « D8 » au milieu ; tandis que le fichier adage.gif est beaucoup plus concis.
+
+
+Q5 :
+	Le fait de changer les octets à partir de l'octet 03c0, çà change les pixels de l'image tout en bas ce celle ci. Dans mon cas, une sorte de ligne bleu apparaît tout en bas.
+
+Q6 :
+	En changeant les octets à partir de celui 03c0, le terminal nous signal que l'image est corrompue et donc qu'il ne peut pas l'afficher.
+
+Dans le format .bmp, chaque pixel est codé sur 3 octets correspondant aux couleurs primaires RVB (FF FF FF16).
+Dans le format .gif, chaque pixel est codé sur 8 bits correspondant à RVB. Toutefois GIF n'enregistre pas directement la couleur de chaque pixel, car pour chaque image, une palette de 2 à 256 couleurs est construite. Ensuite chaque pixel de l'image fait référence à l'une des entrées de la palette. 
+
+Conclusion : quand on modifie les octets dans le .gif, on ne modifie pas directement la couleur mais les références aux entrées de la palette, ce qui pourrait expliquer le fait qu'il devienne corrompue car les références deviennent erronées.
+
+
+
+2.3 Opérateurs Logiques
+Exercice 5 + Exercice 6 :
+Q1 :
+
+xor
+and
+or
+1. Commutative ?
+oui
+oui
+oui
+2. Élément neutre ?
+Oui le 0, car a xor 0 = a
+non
+Oui le 0, car a or 0 = a
+3. Entier a ?
+a xor 5 = 0  si  a = 5 ;
+a xor b = 0 est toujours vrai si a=b
+a and 5 = 0 si a = 0 ;
+a and b = 0 est toujours vrai si a ou/et b = 0
+a or 5 = 0 n'est pas possible
+Q2 :
+a xor b = S
+a b  S
+0 0  0
+0 1  1
+1 0  1
+1 1  0
+a and b = S
+a b  S
+0 0  0
+0 1  0
+1 0  0
+1 1  1
+a or b = S
+a b  S
+0 0  0
+0 1  1
+1 0  1
+1 1  1
+
+Exercice 7:
+
+Q1 :
+a lsh b 
+b = 1
+b = 2
+b = 3
+a = 510
+1010
+2010
+4010
+a = 1012
+1 0102
+10 1002
+101 0002
+
+Q2 :
+	L'opérateur lsh effectue un décalage à gauche de rang b, a lsh b = a * 2b .
+

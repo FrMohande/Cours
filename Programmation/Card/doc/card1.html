@@ -1,0 +1,536 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>card1 module &mdash; Card 0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Card 0 documentation" href="index.html" />
+    <link rel="next" title="Un petit programme utilisant les complexes" href="main.html" />
+    <link rel="prev" title="Card" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="main.html" title="Un petit programme utilisant les complexes"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Card"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Card 0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="card1-module">
+<h1><tt class="docutils literal"><span class="pre">card1</span></tt> module<a class="headerlink" href="#card1-module" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference internal" href="index.html"><em>back</em></a></p>
+<p>card are represented with dictionaries</p>
+<div class="section" id="constructors">
+<h2>Constructors<a class="headerlink" href="#constructors" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="card1.create">
+<tt class="descclassname">card1.</tt><tt class="descname">create</tt><big>(</big><em>value</em>, <em>color</em><big>)</big><a class="reference internal" href="_modules/card1.html#create"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#card1.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>creates a card with value and color</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>value</strong> (<em>element of card.value</em>) &#8211; value of the card</li>
+<li><strong>color</strong> (<em>element of card.color</em>) &#8211; color of the card</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">a new card with value and color</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">card</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">UC:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="card1.randomcard">
+<tt class="descclassname">card1.</tt><tt class="descname">randomcard</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/card1.html#randomcard"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#card1.randomcard" title="Permalink to this definition">¶</a></dt>
+<dd><p>create a cards whose value and color are randomly chosen</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">a randomly chosen card</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">card</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="selectors">
+<h2>Selectors<a class="headerlink" href="#selectors" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="card1.color">
+<tt class="descclassname">card1.</tt><tt class="descname">color</tt><big>(</big><em>card</em><big>)</big><a class="reference internal" href="_modules/card1.html#color"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#card1.color" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the color of the card</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>card</strong> &#8211; the card</li>
+<li><strong>type</strong> &#8211; card</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">the color of the card</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">UC:</th><td class="field-body"><p class="first">None</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Example:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">create</span><span class="p">(</span><span class="s">&#39;A&#39;</span><span class="p">,</span><span class="s">&#39;heart&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">color</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="go">&#39;heart&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="card1.value">
+<tt class="descclassname">card1.</tt><tt class="descname">value</tt><big>(</big><em>card</em><big>)</big><a class="reference internal" href="_modules/card1.html#value"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#card1.value" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns of the value of the card</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>card</strong> (<em>card</em>) &#8211; the card</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">the value of the card</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">UC:</th><td class="field-body">None</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Example:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">create</span><span class="p">(</span><span class="s">&#39;A&#39;</span><span class="p">,</span><span class="n">heart</span><span class="s">&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">value</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="go">&#39;A&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="predicate">
+<h2>Predicate<a class="headerlink" href="#predicate" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="card1.compare_value">
+<tt class="descclassname">card1.</tt><tt class="descname">compare_value</tt><big>(</big><em>card1</em>, <em>card2</em><big>)</big><a class="reference internal" href="_modules/card1.html#compare_value"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#card1.compare_value" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>compares cards values, returns :</dt>
+<dd><ul class="first last simple">
+<li>a positive number if card1’s value is greater than card2’s</li>
+<li>a negative number if card1’s value is lower than card2’s</li>
+<li>0 if card1’s value is the same greater than card2’s</li>
+</ul>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>card1</strong> (<em>card</em>) &#8211; the first card</li>
+<li><strong>card2</strong> (<em>card</em>) &#8211; the second card</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><ul class="simple">
+<li>a positive number if card1’s value is greater than card2’s</li>
+<li>a negative number if card1’s value is lower than card2’s</li>
+<li>0 if card1’s value is the same greater than card2’s</li>
+</ul>
+</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">int</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">UC:</th><td class="field-body"><p class="first">None</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Example:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">c1</span> <span class="o">=</span> <span class="n">create</span><span class="p">(</span><span class="s">&#39;Ace&#39;</span><span class="p">,</span><span class="s">&#39;heart&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c2</span> <span class="o">=</span> <span class="n">create</span><span class="p">(</span><span class="s">&#39;King&#39;</span><span class="p">,</span><span class="s">&#39;heart&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c3</span> <span class="o">=</span> <span class="n">create</span><span class="p">(</span><span class="s">&#39;Ace&#39;</span><span class="p">,</span><span class="s">&#39;spade&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">compare_value</span><span class="p">(</span><span class="n">c1</span><span class="p">,</span><span class="n">c2</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">compare_value</span><span class="p">(</span><span class="n">c2</span><span class="p">,</span><span class="n">c1</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">compare_value</span><span class="p">(</span><span class="n">c1</span><span class="p">,</span><span class="n">c3</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="card1.compare_color">
+<tt class="descclassname">card1.</tt><tt class="descname">compare_color</tt><big>(</big><em>card1</em>, <em>card2</em><big>)</big><a class="reference internal" href="_modules/card1.html#compare_color"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#card1.compare_color" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>compares cars colors,return :</dt>
+<dd><ul class="first last simple">
+<li>a positive number if card1’s color is greater than card2’s</li>
+<li>a negative number if card1’s color is lower than card2’s</li>
+<li>0 if card1’s color is the same greater than card2’s</li>
+</ul>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>card1</strong> (<em>card</em>) &#8211; the first card</li>
+<li><strong>card2</strong> (<em>card</em>) &#8211; the second card</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><ul class="simple">
+<li>a positive number if card1&#8217;s color is greather than card2&#8217;s</li>
+<li>a negative number if card1&#8217;s color is lower than card2&#8217;s</li>
+<li>0 if card1&#8217;s color is the same greather than card2&#8217;s</li>
+</ul>
+</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">int</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">UC:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="card1.compare">
+<tt class="descclassname">card1.</tt><tt class="descname">compare</tt><big>(</big><em>card1</em>, <em>card2</em><big>)</big><a class="reference internal" href="_modules/card1.html#compare"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#card1.compare" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>compares cards, first it compares cards values and if equal cards colors returns :</dt>
+<dd><ul class="first last simple">
+<li>a positive number if card1 is greater than card2</li>
+<li>a negative number if card1 is lower than card2</li>
+<li>0 if card1 is the same greater than card2</li>
+</ul>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>card1</strong> (<em>card</em>) &#8211; the first card</li>
+<li><strong>card2</strong> (<em>card</em>) &#8211; the second card</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><ul class="simple">
+<li>a positive number if card1 is greater than card2</li>
+<li>a negative number if card1 is lower than card2</li>
+<li>0 if card1 is the same greater than card2</li>
+</ul>
+</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">int</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">UC:</th><td class="field-body"><p class="first">None</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Example:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">c1</span> <span class="o">=</span> <span class="n">create</span><span class="p">(</span><span class="s">&#39;Ace&#39;</span><span class="p">,</span><span class="s">&#39;heart&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c2</span> <span class="o">=</span> <span class="n">create</span><span class="p">(</span><span class="s">&#39;King&#39;</span><span class="p">,</span><span class="s">&#39;heart&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c3</span> <span class="o">=</span> <span class="n">create</span><span class="p">(</span><span class="s">&#39;Ace&#39;</span><span class="p">,</span><span class="s">&#39;spade&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c1bis</span> <span class="o">=</span> <span class="n">create</span><span class="p">(</span><span class="s">&#39;Ace&#39;</span><span class="p">,</span><span class="s">&#39;heart&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">compare</span><span class="p">(</span><span class="n">c1</span><span class="p">,</span><span class="n">c2</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">compare</span><span class="p">(</span><span class="n">c2</span><span class="p">,</span><span class="n">c1</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">compare</span><span class="p">(</span><span class="n">c1</span><span class="p">,</span><span class="n">c3</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">compare</span><span class="p">(</span><span class="n">c1</span><span class="p">,</span><span class="n">c1bis</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="card1.print">
+<tt class="descclassname">card1.</tt><tt class="descname">print</tt><big>(</big><em>card</em>, <em>end='\n'</em><big>)</big><a class="reference internal" href="_modules/card1.html#print"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#card1.print" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>print the card</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">param card:</th><td class="field-body">the card</td>
+</tr>
+<tr class="field-even field"><th class="field-name">type card:</th><td class="field-body">card</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">param end:</th><td class="field-body">[optional] separator (default is </td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<dl class="docutils">
+<dt>)</dt>
+<dd><table class="first last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type end:</th><td class="field-body">string</td>
+</tr>
+<tr class="field-even field"><th class="field-name">UC:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="card1.create_card_game">
+<tt class="descclassname">card1.</tt><tt class="descname">create_card_game</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/card1.html#create_card_game"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#card1.create_card_game" title="Permalink to this definition">¶</a></dt>
+<dd><p>create the game card</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">a list who contains the cards</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">UC:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="card1.distribution">
+<tt class="descclassname">card1.</tt><tt class="descname">distribution</tt><big>(</big><em>nombre_carte</em>, <em>jeu_carte</em>, <em>joueurs</em><big>)</big><a class="reference internal" href="_modules/card1.html#distribution"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#card1.distribution" title="Permalink to this definition">¶</a></dt>
+<dd><p>distribute the card for each player</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>jeu_carte</strong> (<em>list</em>) &#8211; list who contains the cards</li>
+<li><strong>joueurs</strong> (<em>dictionary</em>) &#8211; the players</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">UC:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="card1.my_reverse">
+<tt class="descclassname">card1.</tt><tt class="descname">my_reverse</tt><big>(</big><em>l</em>, <em>l2</em><big>)</big><a class="reference internal" href="_modules/card1.html#my_reverse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#card1.my_reverse" title="Permalink to this definition">¶</a></dt>
+<dd><p>renverse the list</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>l1</strong> (<em>list</em>) &#8211; list</li>
+<li><strong>l2</strong> (<em>list</em>) &#8211; list</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">UC:</th><td class="field-body"><p class="first">None</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Example:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">my_reverse</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[])</span>
+<span class="go">[3,2,1,0]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="card1.jeu_bataille">
+<tt class="descclassname">card1.</tt><tt class="descname">jeu_bataille</tt><big>(</big><em>n</em><big>)</big><a class="reference internal" href="_modules/card1.html#jeu_bataille"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#card1.jeu_bataille" title="Permalink to this definition">¶</a></dt>
+<dd><p>plays to the War (card game)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>n</strong> (<em>int</em>) &#8211; numbers of cards for each player</td>
+</tr>
+<tr class="field-even field"><th class="field-name">UC:</th><td class="field-body">numbers of cards</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="private-functions">
+<h2>Private functions<a class="headerlink" href="#private-functions" title="Permalink to this headline">¶</a></h2>
+<p>These functions should not be used.</p>
+<dl class="function">
+<dt id="card1.__to_string">
+<tt class="descclassname">card1.</tt><tt class="descname">__to_string</tt><big>(</big><em>card</em><big>)</big><a class="reference internal" href="_modules/card1.html#__to_string"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#card1.__to_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns a string representation of the card</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>card</strong> (<em>card</em>) &#8211; the card</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">a string representation of the card</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+</tr>
+<tr class="field-even field"><th class="field-name">UC:</th><td class="field-body">None</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Example:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">create</span><span class="p">(</span><span class="s">&#39;Ace&#39;</span><span class="p">,</span><span class="s">&#39;heart&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">to_string</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="go">&#39;Ace of heart&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/logo_FIL.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#"><tt class="docutils literal"><span class="pre">card1</span></tt> module</a><ul>
+<li><a class="reference internal" href="#constructors">Constructors</a></li>
+<li><a class="reference internal" href="#selectors">Selectors</a></li>
+<li><a class="reference internal" href="#predicate">Predicate</a></li>
+<li><a class="reference internal" href="#functions">Functions</a></li>
+<li><a class="reference internal" href="#private-functions">Private functions</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Card</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="main.html"
+                        title="next chapter">Un petit programme utilisant les complexes</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/card1.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="main.html" title="Un petit programme utilisant les complexes"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Card"
+             >previous</a> |</li>
+        <li><a href="index.html">Card 0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015, Outioua Mohand et Jonathan Soleillet, FIL - IEEA - Univ-lille1.
+      Last updated on 17/11/2015.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>
